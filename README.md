@@ -19,3 +19,31 @@ https://www.youtube.com/watch?v=S90zm02utjk&t=293s
 - R-format : คำสั่งของการคำนวน
 - J-format : เป็นคำสั่งของการกระโดยให้ไปทำงานที่ต่ำแหน่งอื่นจากค่าที่กำหนด 
 - I-format : โดนยกตัวอย่างของ lw กับ sw
+## clip2 single cycle vs muti cycle
+https://www.youtube.com/watch?v=G0OmkMiU6XA
+
+อธิบายว่า single cycle และ muti cycle มีการทำงานอย่างไรและแตกต่างกันอย่างไร
+
+ซึ่ง single cycle มีลักษณะเป็น
+- เป็นการทำคำสั่งให้จบภายใน 1 cycle ซึ่งทำให้ต้องเผื่อเวลาสำหรับคำสั่งที่ใช้เวลานานที่สุดไว้ด้วย
+- 1 cycle = 8 ns
+- มี ALU 3ตัว
+- มี memory 2 ตัว
+
+ในส่วนของ muti cycle เป็น
+- แบ่ง 1 cycle ใน single cycle เป็นที่ละ step โดยนับเป็น 1 cycle
+- 1 cycle เวลาไม่แน่นอน
+- ALU และ memory อย่างละตัว
+- มี register instruction
+## clip3 load word in Multi-cycle
+https://www.youtube.com/watch?v=ILn1kOAwJJs
+
+อธิบายการทำงานของ lw ใน Multi-cycle ว่ามีการทำอย่างไร มีกี่ cycle แต่ละ cycle ทำงานอย่างไร
+
+โครงสร้าง lw จะเป็น | opcode(6bit) | $rs(5bit) | $rt(5bit) | offset(16bit) |
+
+opcode ของlw เป็น 100011
+
+รูปแบบที่เราเข้าใจกันคือ ***lw, $rt,offset($rs)*** 
+
+คือ นำค่าใน rs รวมกับค่าของ offset และไปเก็บที่ rt
