@@ -28,7 +28,7 @@
 ## clip3 single cycle vs muti cycle
 [https://www.youtube.com/watch?v=G0OmkMiU6XA](https://www.youtube.com/watch?v=G0OmkMiU6XA)
 <br>อธิบายว่า single cycle และ muti cycle มีการทำงานอย่างไรและแตกต่างกันอย่างไร
-<br>
+
 | type/feature |       1cycle      |  time/cycle  |      ALU     |    memory    |       ir     |
 |--------------|-------------------|--------------|--------------|--------------|--------------|
 |    single    |      finished     |      8ns     |       3      |       2      |       0      |
@@ -39,12 +39,12 @@
 [https://www.youtube.com/watch?v=ILn1kOAwJJs](https://www.youtube.com/watch?v=ILn1kOAwJJs)
 <br>อธิบายการทำงานของ lw ใน Multi-cycle ว่ามีการทำอย่างไร มีกี่ cycle แต่ละ cycle ทำงานอย่างไร
 <br>โครงสร้าง lw จะเป็น 
-<br>
+ 
 |    opcode    |      $rs     |     $rt      |      offset(16bit)     |
 |--------------|--------------|--------------|------------------------|
 |    (6bit)    |    (5bit)    |   (5bit)     |         (16bit)        |
- 
-<br>opcode ของlw เป็น 100011
+
+opcode ของlw เป็น 100011
 <br>รูปแบบที่เราเข้าใจกันคือ ***lw, $rt,offset($rs)*** 
 <br>คือ นำค่าใน rs รวมกับค่าของ offset และไปเก็บที่ rt
 
