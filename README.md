@@ -1,5 +1,10 @@
 # cn210
-MIPS Instruction เป็นสถาปัตยกรรมชุดคำสั่ง ที่มีขนาด 32bit ทุกคำสั่ง แบ่งออกเป็น 3 format
+MIPS Instruction เป็นสถาปัตยกรรมชุดคำสั่ง ที่มีขนาด 32bit ทุกคำสั่ง การแปลงคำสั่งดูได้จาก
+
+**ALU DECODER**
+<br>![img](https://i.imgur.com/0DEre3p.jpg)
+
+ซึ่ง MIPS Instruction แบ่งออกเป็น 3 format
 <br>1) R-format : เกี่บวกัลการคำนวน
 
 |    opcode    |      $rs     |     $rt      |      $rd     |    shamt     |     func     |
@@ -17,12 +22,15 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 
 ลักษณะการทำงานของ lw จะเป็น
 <br>![img](https://i.imgur.com/4pxPfj8.jpg)
+<br>นำdataของaddress ที่เกิดจาก นำ dataใน rs + offset และไปเก็บที่ rt
 
 ลักษณะการทำงานของ sw จะเป็น
 <br>![img](https://i.imgur.com/8mgsz3d.jpg)
+<br>นำdataของaddress rt ไปเก็บที่ address ที่เกิดจากการนำ dataใน rs + offset
 
 ลักษณะการทำงานของ beq จะเป็น
 <br>![img](https://i.imgur.com/xEYYU7A.jpg)
+<br> เช็ค data ใน rs กับ data ใน rt เท่ากันหรือไม่ หากเท่ากัน ต่ำแหน่งที่ทำคำสั่งต่อไปคือ offset shift ไป 2 และไปบวกกับ pc หากไม่เท่าจะทำที่ต่ำแหน่ง pc+4
 
 3) J-format : กระโดดไปที่ตำแหน่งที่ระบุ
 
@@ -30,8 +38,19 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 |--------------|--------------------------|
 |     (6bit)   |         (26bit)          |
 
-ALU DECODER
-<br>![img](https://i.imgur.com/0DEre3p.jpg)
+**von neumann architecture**
+<br>![img](https://i.imgur.com/jELt2xE.jpg)
+
+**Harvard architecture**
+<br>![img](https://i.imgur.com/uU9GSAk.jpg)
+
+**Single cycle** : แต่ละคำสั่งต้องจบภายใน 1 cycle ซึ่งเท่ากับ 1 clock = 8 ns หากคำสั่งไหนที่เสร็จก่อน 8ns จะต้องให้ครบ 8ns ก่อนทำให้เกิดเวลาที่เป็น waste 
+<br>![img](https://i.imgur.com/qOTAKYp.jpg)
+
+ซึ่งพัฒนามาเป็น multi cycle แบ่ง step ใน Single cycle เป็น 1 cycle ทำให้เวลาที่เป็น waste มาใช้แทนที่จะสูญเสียโดยเปล่าประโยชน์
+<br>![img](https://i.imgur.com/EchLi1X.jpg)
+
+
 ## clip1 R-format
 [https://www.youtube.com/watch?v=wNY26EktrtM](https://www.youtube.com/watch?v=wNY26EktrtM)
 <br>ในคลิปจะสรุป r-format โดยยกตัวอย่างเป็นคำสั่งการบวก มี 32 bit
