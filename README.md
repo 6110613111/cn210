@@ -29,14 +29,13 @@
 [https://www.youtube.com/watch?v=G0OmkMiU6XA](https://www.youtube.com/watch?v=G0OmkMiU6XA)
 <br>อธิบายว่า single cycle และ muti cycle มีการทำงานอย่างไรและแตกต่างกันอย่างไร
 <br>ซึ่ง single cycle มีลักษณะเป็น
-
 - เป็นการทำคำสั่งให้จบภายใน 1 cycle ซึ่งทำให้ต้องเผื่อเวลาสำหรับคำสั่งที่ใช้เวลานานที่สุดไว้ด้วย
 - 1 cycle = 8 ns
 - มี ALU 3ตัว
 - มี memory 2 ตัว
-
-<br>ในส่วนของ muti cycle เป็น
-
+<br>
+ในส่วนของ muti cycle เป็น
+<br>
 - แบ่ง 1 cycle ใน single cycle เป็นที่ละ step โดยนับเป็น 1 cycle
 - 1 cycle เวลาไม่แน่นอน
 - ALU และ memory อย่างละตัว
@@ -45,7 +44,12 @@
 ## clip4 load word in Multi-cycle
 [https://www.youtube.com/watch?v=ILn1kOAwJJs](https://www.youtube.com/watch?v=ILn1kOAwJJs)
 <br>อธิบายการทำงานของ lw ใน Multi-cycle ว่ามีการทำอย่างไร มีกี่ cycle แต่ละ cycle ทำงานอย่างไร
-<br>โครงสร้าง lw จะเป็น | opcode(6bit) | $rs(5bit) | $rt(5bit) | offset(16bit) |
+<br>โครงสร้าง lw จะเป็น 
+<br>
+|    opcode    |      $rs     |     $rt      |      offset(16bit)     |
+|--------------|--------------|--------------|------------------------|
+|    (6bit)    |    (5bit)    |   (5bit)     |         (16bit)        |
+<br>
 <br>opcode ของlw เป็น 100011
 <br>รูปแบบที่เราเข้าใจกันคือ ***lw, $rt,offset($rs)*** 
 <br>คือ นำค่าใน rs รวมกับค่าของ offset และไปเก็บที่ rt
