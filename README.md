@@ -20,15 +20,15 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 |--------------|--------------|--------------|------------------------|
 |    (6bit)    |    (5bit)    |   (5bit)     |         (16bit)        |
 
-ลักษณะการทำงานของ lw จะเป็น
+- ลักษณะการทำงานของ lw จะเป็น
 <br>![img](https://i.imgur.com/4pxPfj8.jpg)
 <br>นำdataของaddress ที่เกิดจาก นำ dataใน rs + offset และไปเก็บที่ rt
 
-ลักษณะการทำงานของ sw จะเป็น
+- ลักษณะการทำงานของ sw จะเป็น
 <br>![img](https://i.imgur.com/8mgsz3d.jpg)
 <br>นำdataของaddress rt ไปเก็บที่ address ที่เกิดจากการนำ dataใน rs + offset
 
-ลักษณะการทำงานของ beq จะเป็น
+- ลักษณะการทำงานของ beq จะเป็น
 <br>![img](https://i.imgur.com/xEYYU7A.jpg)
 <br> เช็ค data ใน rs กับ data ใน rt เท่ากันหรือไม่ หากเท่ากัน ต่ำแหน่งที่ทำคำสั่งต่อไปคือ offset shift ไป 2 และไปบวกกับ pc หากไม่เท่าจะทำที่ต่ำแหน่ง pc+4
 
