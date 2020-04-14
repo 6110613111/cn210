@@ -4,17 +4,29 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 
 |    opcode    |      $rs     |     $rt      |      $rd     |    shamt     |     func     |
 |--------------|--------------|--------------|--------------|--------------|--------------|
+|    (6bit)    |    (5bit)    |   (5bit)     |    (5bit)    |   (5bit)     |    (6bit)    |
 
-2) I-format : เกี่ยวกับหน่วยความจำ
+ลักษณะการทำงานจะเป็น
+![img](https://i.imgur.com/axkI8r9.jpg)
 
-|    opcode    |      $rs     |     $rt      |     value of offset    |
+2) I-format : เกี่ยวกับหน่วยความจำ 
+
+|    opcode    |      $rs     |     $rt      |        offset          |
 |--------------|--------------|--------------|------------------------|
+|    (6bit)    |    (5bit)    |   (5bit)     |         (16bit)        |
 
+ลักษณะการทำงานของ lw จะเป็น
+![img](https://i.imgur.com/4pxPfj8.jpg)
+
+ลักษณะการทำงานของ sw จะเป็น
+![img](https://i.imgur.com/8mgsz3d.jpgg)
 
 3) J-format : กระโดดไปที่ตำแหน่งที่ระบุ
 
 |    opcode    |      absolute address    |
 |--------------|--------------------------|
+|     (6bit)   |         (26bit)          |
+
 
 ## clip1 R-format
 [https://www.youtube.com/watch?v=wNY26EktrtM](https://www.youtube.com/watch?v=wNY26EktrtM)
