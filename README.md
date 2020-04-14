@@ -7,7 +7,7 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 |    (6bit)    |    (5bit)    |   (5bit)     |    (5bit)    |   (5bit)     |    (6bit)    |
 
 ลักษณะการทำงานจะเป็น
-![img](https://i.imgur.com/axkI8r9.jpg)
+<br>![img](https://i.imgur.com/axkI8r9.jpg)
 
 2) I-format : เกี่ยวกับหน่วยความจำ 
 
@@ -16,10 +16,13 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 |    (6bit)    |    (5bit)    |   (5bit)     |         (16bit)        |
 
 ลักษณะการทำงานของ lw จะเป็น
-![img](https://i.imgur.com/4pxPfj8.jpg)
+<br>![img](https://i.imgur.com/4pxPfj8.jpg)
 
 ลักษณะการทำงานของ sw จะเป็น
-![img](https://i.imgur.com/8mgsz3d.jpgg)
+<br>![img](https://i.imgur.com/8mgsz3d.jpg)
+
+ลักษณะการทำงานของ beq จะเป็น
+<br>![img](https://i.imgur.com/xEYYU7A.jpg)
 
 3) J-format : กระโดดไปที่ตำแหน่งที่ระบุ
 
@@ -27,7 +30,8 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 |--------------|--------------------------|
 |     (6bit)   |         (26bit)          |
 
-
+ALU DECODER
+<br>![img](https://i.imgur.com/0DEre3p.jpg)
 ## clip1 R-format
 [https://www.youtube.com/watch?v=wNY26EktrtM](https://www.youtube.com/watch?v=wNY26EktrtM)
 <br>ในคลิปจะสรุป r-format โดยยกตัวอย่างเป็นคำสั่งการบวก มี 32 bit
