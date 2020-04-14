@@ -29,7 +29,7 @@
 [https://www.youtube.com/watch?v=G0OmkMiU6XA](https://www.youtube.com/watch?v=G0OmkMiU6XA)
 <br>อธิบายว่า single cycle และ muti cycle มีการทำงานอย่างไรและแตกต่างกันอย่างไร
 
-| type/feature |       1cycle      |  time/cycle  |      ALU     |    memory    |       ir     |
+| type/feature |       1cycle      |  time/cycle  |      ALU     |    memory    |instruction register|
 |--------------|-------------------|--------------|--------------|--------------|--------------|
 |    single    |      finished     |      8ns     |       3      |       2      |       0      |
 |    multi     |no need to finished|   Uncertain  |       1      |       1      |       1      |
