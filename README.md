@@ -6,12 +6,12 @@
 [https://www.youtube.com/watch?v=wNY26EktrtM](https://www.youtube.com/watch?v=wNY26EktrtM)
 <br>ในคลิปจะสรุป r-format โดยยกตัวอย่างเป็นคำสั่งการบวก มี 32 bit
 <br>มีโครงสร้างเป็น 
-<br>
+
 |    opcode    |      $rs     |     $rt      |      $rd     |    shamt     |     func     |
 |--------------|--------------|--------------|--------------|--------------|--------------|
 |    (6bit)    |    (5bit)    |   (5bit)     |    (5bit)    |   (5bit)     |    (6bit)    |
 
-<br>และใน R-format opcode เป็น 000 000
+และใน R-format opcode เป็น 000 000
 <br>ซึ่งรูปแบบที่เราเข้าใจกันคือ ***func, $rd,$rs,$rt*** 
 <br>โดยวิธีการทำงานคือ rs คำนวนกับ rt ตามรูปแบบของ func และผลที่ได้ไปเก็บที่ rd.
 
