@@ -28,18 +28,12 @@
 ## clip3 single cycle vs muti cycle
 [https://www.youtube.com/watch?v=G0OmkMiU6XA](https://www.youtube.com/watch?v=G0OmkMiU6XA)
 <br>อธิบายว่า single cycle และ muti cycle มีการทำงานอย่างไรและแตกต่างกันอย่างไร
-<br>ซึ่ง single cycle มีลักษณะเป็น
-- เป็นการทำคำสั่งให้จบภายใน 1 cycle ซึ่งทำให้ต้องเผื่อเวลาสำหรับคำสั่งที่ใช้เวลานานที่สุดไว้ด้วย
-- 1 cycle = 8 ns
-- มี ALU 3ตัว
-- มี memory 2 ตัว
 <br>
-ในส่วนของ muti cycle เป็น
+| type/feature |       1cycle      |  time/cycle  |      ALU     |    memory    |       ir     |
+|--------------|-------------------|--------------|--------------|--------------|--------------|
+|    single    |      finished     |      8ns     |       3      |       2      |       0      |
+|    multi     |no need to finished|   Uncertain  |       1      |       1      |       1      |
 
-- แบ่ง 1 cycle ใน single cycle เป็นที่ละ step โดยนับเป็น 1 cycle
-- 1 cycle เวลาไม่แน่นอน
-- ALU และ memory อย่างละตัว
-- มี register instruction
 
 ## clip4 load word in Multi-cycle
 [https://www.youtube.com/watch?v=ILn1kOAwJJs](https://www.youtube.com/watch?v=ILn1kOAwJJs)
@@ -49,7 +43,7 @@
 |    opcode    |      $rs     |     $rt      |      offset(16bit)     |
 |--------------|--------------|--------------|------------------------|
 |    (6bit)    |    (5bit)    |   (5bit)     |         (16bit)        |
-<br>
+ 
 <br>opcode ของlw เป็น 100011
 <br>รูปแบบที่เราเข้าใจกันคือ ***lw, $rt,offset($rs)*** 
 <br>คือ นำค่าใน rs รวมกับค่าของ offset และไปเก็บที่ rt
@@ -80,6 +74,7 @@ ALUsrcA = 0 mux จึงส่งค่า pc ไปที่ ALU ,ALUsrcB = 3 
 - เชิงโครงสร้าง ที่มีการซ้อนทับของวงจร 
 - เชิงข้อมูล การใช้ข้อมูลจากคำสั่งก่อนหน้าแต่คำสั่งก่อนหน้ายังไม่เสร็จ 
 - การควบคุม จะกระโดดแต่ติดคำสั่งก่อนหน้าเสียก่อน 
-<br>วิธีการแก้อาจจะเป็นการรอ,หรือให้คำสั่งที่มาที่หลังใช้งานอุปกรณ์ก่อน หรือจัดดับคำสั่งใหม่
+
+วิธีการแก้อาจจะเป็นการรอ,หรือให้คำสั่งที่มาที่หลังใช้งานอุปกรณ์ก่อน หรือจัดดับคำสั่งใหม่
 
 
