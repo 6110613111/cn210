@@ -34,6 +34,7 @@
 - 1 cycle = 8 ns
 - มี ALU 3ตัว
 - มี memory 2 ตัว
+
 <br>ในส่วนของ muti cycle เป็น
 
 - แบ่ง 1 cycle ใน single cycle เป็นที่ละ step โดยนับเป็น 1 cycle
