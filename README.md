@@ -5,7 +5,7 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 <br>![img](https://i.imgur.com/0DEre3p.jpg)
 
 ซึ่ง MIPS Instruction แบ่งออกเป็น 3 format
-<br>1) R-format : เกี่บวกัลการคำนวน
+#### 1) R-format : เกี่บวกับการคำนวน
 
 |    opcode    |      $rs     |     $rt      |      $rd     |    shamt     |     func     |
 |--------------|--------------|--------------|--------------|--------------|--------------|
@@ -14,7 +14,7 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 ลักษณะการทำงานจะเป็น
 <br>![img](https://i.imgur.com/axkI8r9.jpg)
 
-2) I-format : เกี่ยวกับหน่วยความจำ 
+#### 2) I-format : เกี่ยวกับหน่วยความจำ 
 
 |    opcode    |      $rs     |     $rt      |        offset          |
 |--------------|--------------|--------------|------------------------|
@@ -32,7 +32,7 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 <br>![img](https://i.imgur.com/xEYYU7A.jpg)
 <br> เช็ค data ใน rs กับ data ใน rt เท่ากันหรือไม่ หากเท่ากัน ต่ำแหน่งที่ทำคำสั่งต่อไปคือ offset shift ไป 2 และไปบวกกับ pc หากไม่เท่าจะทำที่ต่ำแหน่ง pc+4
 
-3) J-format : กระโดดไปที่ตำแหน่งที่ระบุ
+#### 3) J-format : กระโดดไปที่ตำแหน่งที่ระบุ
 
 |    opcode    |      absolute address    |
 |--------------|--------------------------|
@@ -47,9 +47,13 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 **Single cycle** : แต่ละคำสั่งต้องจบภายใน 1 cycle ซึ่งเท่ากับ 1 clock = 8 ns หากคำสั่งไหนที่เสร็จก่อน 8ns จะต้องให้ครบ 8ns ก่อนทำให้เกิดเวลาที่เป็น waste 
 <br>![img](https://i.imgur.com/qOTAKYp.jpg)
 
-ซึ่งพัฒนามาเป็น multi cycle แบ่ง step ใน Single cycle เป็น 1 cycle ทำให้เวลาที่เป็น waste มาใช้แทนที่จะสูญเสียโดยเปล่าประโยชน์
+ซึ่งพัฒนามาเป็น **multi cycle** แบ่ง step ใน Single cycle เป็น 1 cycle ทำให้เวลาที่เป็น waste มาใช้แทนที่จะสูญเสียโดยเปล่าประโยชน์
 <br>![img](https://i.imgur.com/EchLi1X.jpg)
-
+<br>multi cycle ทำสูงสุดที่ 5 cycle แบ่งออกเป็น
+- T1 i-fecth : ส่งคำสั่งไปที่ memory และ pc + 4
+- T2 i-fecth +1 : แปลคำสั่ง
+- T3 Exex : คำนวน
+- T4
 
 ## clip1 R-format
 [https://www.youtube.com/watch?v=wNY26EktrtM](https://www.youtube.com/watch?v=wNY26EktrtM)
@@ -63,6 +67,7 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 และใน R-format opcode เป็น 000 000
 <br>ซึ่งรูปแบบที่เราเข้าใจกันคือ ***func, $rd,$rs,$rt*** 
 <br>โดยวิธีการทำงานคือ rs คำนวนกับ rt ตามรูปแบบของ func และผลที่ได้ไปเก็บที่ rd.
+
 
 ## clip2 cpu
 [https://www.youtube.com/watch?v=S90zm02utjk](https://www.youtube.com/watch?v=S90zm02utjk)
