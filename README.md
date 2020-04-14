@@ -1,6 +1,6 @@
 # cn210
 
-เป็นแหล่งรวมลิงค์ Youtube ที่สรุปเนื้อหาจากการเรียนในรายวิชา Fundamental of computer architecture หรือ cn210 (สถาปัตยกรรมคอมพิวเตออร์) โดยยึดคำสั่งของ MIPS เป็นหลัก จัดทำโดย น.ส. กนกกร นามเปรมปรีดิ
+เป็นแหล่งรวมลิงค์ Youtube ที่สรุปเนื้อหาจากการเรียนในรายวิชา Fundamental of computer architecture หรือ cn210 (สถาปัตยกรรมคอมพิวเตออร์) โดยยึดคำสั่งของ MIPS เป็นหลัก จัดทำโดย น.ส. กนกกร นามเปรมปรีดิ 
 
 ## clip1 R-format
 [https://www.youtube.com/watch?v=wNY26EktrtM](https://www.youtube.com/watch?v=wNY26EktrtM)
@@ -51,8 +51,13 @@ opcode ของlw เป็น 100011
 ## clip5 BEQ in Multi-cycle
 [https://www.youtube.com/watch?v=Osl9eChRaCA](https://www.youtube.com/watch?v=Osl9eChRaCA)
 <br>อธิบายการทำงานของ BEQ ใน Multi-cycle ว่ามีการทำอย่างไร มีกี่ cycle แต่ละ cycle ทำงานอย่างไร
-<br>ซึ่ง BEQ เป็น I-format โครงสร้าง BEQ จะเป็น | opcode(6bit) | $rs(5bit) | $rt(5bit) | offset(16bit) |
-<br>มีรูปแบบที่เราเข้าใจกันคือ ***beq, $rs,$rt,offset***
+<br>ซึ่ง BEQ เป็น I-format โครงสร้าง BEQ จะเป็น 
+
+|    opcode    |      $rs     |     $rt      |      offset(16bit)     |
+|--------------|--------------|--------------|------------------------|
+|    (6bit)    |    (5bit)    |   (5bit)     |         (16bit)        |
+
+มีรูปแบบที่เราเข้าใจกันคือ ***beq, $rs,$rt,offset***
 <br>คือเช็คว่า rs กับ rt เท่ากันหรือไม่ โดยวิธีการเช็คคิอนำ rs กับ rt มาลบกัน ถ้าค่าที่ได้...
 - 0 ย้ายไปทำคำสั่งที่ pc + offset
 - ไม่ใช่ 0 ย้ายไปทำคำสั่งที่ pc + 4
@@ -62,11 +67,11 @@ opcode ของlw เป็น 100011
 [https://www.youtube.com/watch?v=Zuj5F-_kMsc](https://www.youtube.com/watch?v=Zuj5F-_kMsc)
 <br>ในคลิปนี้จะอธิบายการทำของ R-type in Multi-cycle มีการอธิบายของ state machine เข้ามาร่วมด้วย
 <br>โดยเริ่มที่ 
-- T1 Fetch มีค่า IorD = 0 mux จึงส่งค่าที่ได้จาก pc ไปที่ memory , ALUsrcA = 0 mux จึงส่งค่า pc ไปที่ ALU ,ALUsrcB = 1 จึงส่ง 4 ไปที่ ALU และ ALUOp = Add ที่ ALU จำคำนวนแบบบวก และส่งผลลัพธ์ไปที่ pc 
+```- T1 Fetch มีค่า IorD = 0 mux จึงส่งค่าที่ได้จาก pc ไปที่ memory , ALUsrcA = 0 mux จึงส่งค่า pc ไปที่ ALU ,ALUsrcB = 1 จึงส่ง 4 ไปที่ ALU และ ALUOp = Add ที่ ALU จำคำนวนแบบบวก และส่งผลลัพธ์ไปที่ pc 
 - T2 Fetch + 1 ขึ้นอยู่กับคำสั่งว่ารูปแบบไหน ถ้าเป็น R-format ก็ส่งค่า rs , rt ไปเก็บที่ A,B ถ้าเป็นคำสั่งที่ opcode จะพิจารณา state machine ด้วย
 ALUsrcA = 0 mux จึงส่งค่า pc ไปที่ ALU ,ALUsrcB = 3 mux จึงส่ง offset ที่แปลงจาก 16 bit เป็น 32 bit และ shift ไป 2 ไปที่ ALU และ ALUOp = 0 ที่ ALU จำคำนวนแบบบวก และส่งผลลัพธ์ไปที่ ALUOut
 - T3 ALUsrcA = 1 mux จึงส่งค่า A ไปที่ ALU ,ALUsrcB = 0 จึงส่ง B ไปที่ ALU และ ALUOp ที่รับค่าจากทั้ง OppCode และ func ส่งสัญญาณไปที่ ALU และคำนวนตามคำสั่งที่ได้มา
-- T4 เป็นการนำค่าที่ได้ไปเป็นที่ rd 
+- T4 เป็นการนำค่าที่ได้ไปเป็นที่ rd ```
 
 ## clip7 PIPELINED
 <br>อธิบาย PIPELINED โดยการเปรียบเทียบกับการซักผ้า ซึ่ง PIPELINED เข้ามาช่วยให้การทำงานของคอมพิวเตอรเร็วขึ้น เมื่อเทียบกับ single cycle และ muti cycle 
