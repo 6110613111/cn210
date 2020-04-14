@@ -3,11 +3,10 @@
 เป็นแหล่งรวมลิงค์ Youtube ที่สรุปเนื้อหาจากการเรียนในรายวิชา Fundamental of computer architecture หรือ cn210 (สถาปัตยกรรมคอมพิวเตออร์) โดยยึดคำสั่งของ MIPS เป็นหลัก จัดทำโดย น.ส. กนกกร นามเปรมปรีดิ
 
 ## clip1 R-format
-https://www.youtube.com/watch?v=wNY26EktrtM
-
-ในคลิปจะสรุป r-format โดยยกตัวอย่างเป็นคำสั่งการบวก มี 32 bit
-
-มีโครงสร้างเป็น | opcode(6bit) | $rs(5bit) | $rt(5bit) | $rd(5bit) | shamt(5bit) | func(6bit) |
+[https://www.youtube.com/watch?v=wNY26EktrtM](https://www.youtube.com/watch?v=wNY26EktrtM)
+<br>ในคลิปจะสรุป r-format โดยยกตัวอย่างเป็นคำสั่งการบวก มี 32 bit
+<br>มีโครงสร้างเป็น 
+| opcode(6bit) | $rs(5bit) | $rt(5bit) | $rd(5bit) | shamt(5bit) | func(6bit) |
 
 และใน R-format opcode เป็น 000 000
 
@@ -37,6 +36,8 @@ https://www.youtube.com/watch?v=G0OmkMiU6XA
 - 1 cycle เวลาไม่แน่นอน
 - ALU และ memory อย่างละตัว
 - มี register instruction
+
+
 ## clip4 load word in Multi-cycle
 https://www.youtube.com/watch?v=ILn1kOAwJJs
 
