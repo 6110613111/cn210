@@ -5,6 +5,7 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 <br>![img](https://i.imgur.com/0DEre3p.jpg)
 
 ซึ่ง MIPS Instruction แบ่งออกเป็น 3 format
+
 **1) R-format : เกี่บวกับการคำนวน**
 
 |    opcode    |      $rs     |     $rt      |      $rd     |    shamt     |     func     |
@@ -14,7 +15,7 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 ลักษณะการทำงานจะเป็น
 <br>![img](https://i.imgur.com/axkI8r9.jpg)
 
-**2) I-format : เกี่ยวกับหน่วยความจำ **
+**2) I-format : เกี่ยวกับหน่วยความจำ**
 
 |    opcode    |      $rs     |     $rt      |        offset          |
 |--------------|--------------|--------------|------------------------|
