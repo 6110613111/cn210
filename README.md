@@ -53,7 +53,8 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 - T1 i-fecth : ส่งคำสั่งไปที่ memory และ pc + 4
 - T2 i-fecth +1 : แปลคำสั่ง
 - T3 Exex : คำนวน
-- T4
+- T4 ส่งไปที่ mem
+- T5 เขียนลง mem
 
 ## clip1 R-format
 [https://www.youtube.com/watch?v=wNY26EktrtM](https://www.youtube.com/watch?v=wNY26EktrtM)
@@ -123,20 +124,25 @@ opcode ของlw เป็น 100011
 <br>โดยเริ่มที่ 
 
 ```
-T1 : Fetch มีค่า IorD = 0 mux จึงส่งค่าที่ได้จาก pc ไปที่ memory , ALUsrcA = 0 mux จึงส่งค่า pc ไปที่ ALU ,
+T1 : Fetch มีค่า IorD = 0 mux จึงส่งค่าที่ได้จาก pc ไปที่ memory , ALUsrcA = 0 mux 
+จึงส่งค่า pc ไปที่ ALU ,
 ALUsrcB = 1 จึงส่ง 4 ไปที่ ALU และ ALUOp = Add ที่ ALU จำคำนวนแบบบวก และส่งผลลัพธ์ไปที่ pc 
 
-T2 Fetch + 1 ขึ้นอยู่กับคำสั่งว่ารูปแบบไหน ถ้าเป็น R-format ก็ส่งค่า rs , rt ไปเก็บที่ A,B ถ้าเป็นคำสั่งที่ opcode 
-จะพิจารณา state machine ด้วย ALUsrcA = 0 mux จึงส่งค่า pc ไปที่ ALU ,ALUsrcB = 3 mux จึงส่ง offset ที่แปลงจาก 16 bit เป็น 32 bit 
+T2 Fetch + 1 ขึ้นอยู่กับคำสั่งว่ารูปแบบไหน ถ้าเป็น R-format ก็ส่งค่า rs , rt ไปเก็บที่ A,B 
+ถ้าเป็นคำสั่งที่ opcode จะพิจารณา state machine ด้วย ALUsrcA = 0 mux จึงส่งค่า pc ไปที่ ALU ,
+ALUsrcB = 3 mux จึงส่ง offset ที่แปลงจาก 16 bit เป็น 32 bit 
 และ shift ไป 2 ไปที่ ALU และ ALUOp = 0 ที่ ALU จำคำนวนแบบบวก และส่งผลลัพธ์ไปที่ ALUOut
 
 T3 ALUsrcA = 1 mux จึงส่งค่า A ไปที่ ALU ,ALUsrcB = 0 จึงส่ง B ไปที่ ALU และ 
 ALUOp ที่รับค่าจากทั้ง OppCode และ func ส่งสัญญาณไปที่ ALU และคำนวนตามคำสั่งที่ได้มา
 
-T4 เป็นการนำค่าที่ได้ไปเป็นที่ rd 
+T4 เป็นการนำค่าที่ได้ไปเป็นที่ rd โดย memtoreg = 0 ค่าที่เข้าmemคือALUout 
+, regDst = 1 ค่าที่เข้าไป IR  $rd(เป็นการระบุ rigister ว่าให้เซฟให้ตัวไหน) 
+และ RegWrite = 1 คือให้ เขียนค่าของ ALUout ลง $rd
 ```
 
 ## clip7 PIPELINED
+[https://www.youtube.com/watch?v=Tuu2xxzDl2Q](https://www.youtube.com/watch?v=Tuu2xxzDl2Q)
 <br>อธิบาย PIPELINED โดยการเปรียบเทียบกับการซักผ้า ซึ่ง PIPELINED เข้ามาช่วยให้การทำงานของคอมพิวเตอรเร็วขึ้น เมื่อเทียบกับ single cycle และ muti cycle 
 <br>แต่ PIPELINED ก็อาจสร้างปัญหาขึ้น เช่น 
 - เชิงโครงสร้าง ที่มีการซ้อนทับของวงจร 
