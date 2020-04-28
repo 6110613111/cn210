@@ -1,6 +1,14 @@
-# cn210
-MIPS Instruction เป็นสถาปัตยกรรมชุดคำสั่ง ที่มีขนาด 32bit ทุกคำสั่ง การแปลงคำสั่งดูได้จาก
+# cn210 
 
+<br>ส่วนประกอบ computer มี 3 ส่วน
+- CPU : หน่วยประมวลผลกลาง
+- Main Memory : หน่วยความจำหลัก
+- I/O : หน่วยรับข้อมูลเข้าออก
+<br> : ซึ่ง CPU ประกอบด้วย 3 ส่วย
+- ALU : คำนวนทางคณิตศาสตร ตรรกศาสตร?
+- Register : ที่พักความจำชั่วคราว
+- Control Unit : หน่วยควยคุม
+<br>MIPS Instruction เป็นสถาปัตยกรรมชุดคำสั่ง ที่มีขนาด 32bit ทุกคำสั่ง การแปลงคำสั่งดูได้จาก
 **ALU DECODER**
 <br>![img](https://i.imgur.com/0DEre3p.jpg)
 
@@ -39,11 +47,12 @@ MIPS Instruction เป็นสถาปัตยกรรมชุดคำส
 |--------------|--------------------------|
 |     (6bit)   |         (26bit)          |
 
-**von neumann architecture**
+**von neumann architecture** : ใช้พื้นที่น้อย และ แก้ไขโปรแกรมง่าย แต่โปรแกรมก็จะถูกเขียนทับง่าย และใช้ Bandwidth สูงเพราะ instruction กับ data ใช้ memory เดียวกัน
 <br>![img](https://i.imgur.com/jELt2xE.jpg)
-
-**Harvard architecture**
+พัฒนามาเป็น
+**Harvard architecture** : มีความเร็วมากว่า von neumann แต่เขียนโปรแกรมยากกว่า เพราะ instruction กับ data แยกmemory ออกจากกัน
 <br>![img](https://i.imgur.com/uU9GSAk.jpg)
+<br> ปัจจุบันเลยใช้ architecture ที่รวมข้อดีของทุกคู่ไว้ด้วยกัน (Modified Harvard Architecture)
 
 **Single cycle** : แต่ละคำสั่งต้องจบภายใน 1 cycle ซึ่งเท่ากับ 1 clock = 8 ns หากคำสั่งไหนที่เสร็จก่อน 8ns จะต้องให้ครบ 8ns ก่อนทำให้เกิดเวลาที่เป็น waste 
 <br>![img](https://i.imgur.com/qOTAKYp.jpg)
