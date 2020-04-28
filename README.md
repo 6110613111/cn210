@@ -51,6 +51,7 @@
 
 **von neumann architecture** : ใช้พื้นที่น้อย และ แก้ไขโปรแกรมง่าย แต่โปรแกรมก็จะถูกเขียนทับง่าย และใช้ Bandwidth สูงเพราะ instruction กับ data ใช้ memory เดียวกัน
 <br>![img](https://i.imgur.com/jELt2xE.jpg)
+
 พัฒนามาเป็น
 **Harvard architecture** : มีความเร็วมากว่า von neumann แต่เขียนโปรแกรมยากกว่า เพราะ instruction กับ data แยกmemory ออกจากกัน
 <br>![img](https://i.imgur.com/uU9GSAk.jpg)
