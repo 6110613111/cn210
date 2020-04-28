@@ -49,6 +49,7 @@
 |--------------|--------------------------|
 |     (6bit)   |         (26bit)          |
 
+<br>---------------------------------------------<br>
 **von neumann architecture** : ใช้พื้นที่น้อย และ แก้ไขโปรแกรมง่าย แต่โปรแกรมก็จะถูกเขียนทับง่าย และใช้ Bandwidth สูงเพราะ instruction กับ data ใช้ memory เดียวกัน
 <br>![img](https://i.imgur.com/jELt2xE.jpg)
 
@@ -56,6 +57,8 @@
 **Harvard architecture** : มีความเร็วมากว่า von neumann แต่เขียนโปรแกรมยากกว่า เพราะ instruction กับ data แยกmemory ออกจากกัน
 <br>![img](https://i.imgur.com/uU9GSAk.jpg)
 <br> ปัจจุบันเลยใช้ architecture ที่รวมข้อดีของทุกคู่ไว้ด้วยกัน (Modified Harvard Architecture)
+
+<br>---------------------------------------------<br> 
 
 **Single cycle** : แต่ละคำสั่งต้องจบภายใน 1 cycle ซึ่งเท่ากับ 1 clock = 8 ns หากคำสั่งไหนที่เสร็จก่อน 8ns จะต้องให้ครบ 8ns ก่อนทำให้เกิดเวลาที่เป็น waste 
 <br>![img](https://i.imgur.com/qOTAKYp.jpg)
@@ -69,7 +72,22 @@
 - T4 ส่งไปที่ mem
 - T5 เขียนลง mem
 
+และพัฒนามาเป็น pipelined ที่เป็นการ 1 คำสั่งเป็นแบบ multicycle แต่มีความเร็วมากขึ้น
+![img](https://i.imgur.com/32s6Haz.jpg)
 
+<br>---------------------------------------------<br>
+
+เขียนโปรแกรมได้ง่ายกว่าเพราะมีชุดคำสั่งเยอะ
+มีคำสั่งที่เข้าไปใน memory นอกจากคำสั่ง load word,store word
+ขนาดของ instruction สามารถเปลี่ยนแปลงได้
+
+| **CISC** | **RISC** |
+|--------|--------|
+|ซับซ้อน|เรียบง่าย|
+|มีชุดคำสั่งเยอะ|คำชุดสั่งน้อย|
+|มีคำสั่งเข้า memory มากกว่า lw & sw|มีคำสั่งเข้า memory 'แค่' lw & sw|
+|instruction สามารถเปลี่ยนแปลงได้|instruction ขนาดคงที่|
+|multi cycle|single cycle|
 
 ## [clip1 R-format](https://www.youtube.com/watch?v=wNY26EktrtM)
 <br>ในคลิปจะสรุป r-format โดยยกตัวอย่างเป็นคำสั่งการบวก มี 32 bit
@@ -102,8 +120,7 @@
 |    multi     |no need to finished|   Uncertain  |       1      |       1      |       1      |
 
 
-## clip4 load word in Multi-cycle
-[https://www.youtube.com/watch?v=ILn1kOAwJJs](https://www.youtube.com/watch?v=ILn1kOAwJJs)
+## [clip4 load word in Multi-cycle](https://www.youtube.com/watch?v=ILn1kOAwJJs)
 <br>อธิบายการทำงานของ lw ใน Multi-cycle ว่ามีการทำอย่างไร มีกี่ cycle แต่ละ cycle ทำงานอย่างไร
 <br>โครงสร้าง lw จะเป็น 
  
