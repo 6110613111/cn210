@@ -84,7 +84,7 @@
 |มีคำสั่งเข้า memory มากกว่า lw & sw|มีคำสั่งเข้า memory 'แค่' lw & sw|
 |instruction สามารถเปลี่ยนแปลงได้|instruction ขนาดคงที่|
 |multi cycle|single cycle|
-
+ 
 <br>---------------------------------------------<br>
 
 ## [clip1 R-format](https://www.youtube.com/watch?v=wNY26EktrtM)
