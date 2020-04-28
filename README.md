@@ -1,4 +1,5 @@
 # cn210 
+## สรุปการเรียนวิชา cn210 จัดทำโดย น.ส.กนกกร นามเปรมปรีดิ์ 6110613301
 
 <br>ส่วนประกอบ computer มี 3 ส่วน
 - CPU : หน่วยประมวลผลกลาง
@@ -56,7 +57,7 @@
 พัฒนามาเป็น
 **Harvard architecture** : มีความเร็วมากว่า von neumann แต่เขียนโปรแกรมยากกว่า เพราะ instruction กับ data แยกmemory ออกจากกัน
 <br>![img](https://i.imgur.com/uU9GSAk.jpg)
-<br> ปัจจุบันเลยใช้ architecture ที่รวมข้อดีของทุกคู่ไว้ด้วยกัน (Modified Harvard Architecture)
+<br> *และมีการพัฒนามาเป็น Modified Harvard Architecture ที่รวมข้อดีไว้ด้วยกัน
 
 <br>---------------------------------------------<br> 
 
@@ -77,10 +78,6 @@
 
 <br>---------------------------------------------<br>
 
-เขียนโปรแกรมได้ง่ายกว่าเพราะมีชุดคำสั่งเยอะ
-มีคำสั่งที่เข้าไปใน memory นอกจากคำสั่ง load word,store word
-ขนาดของ instruction สามารถเปลี่ยนแปลงได้
-
 | **CISC** | **RISC** |
 |--------|--------|
 |ซับซ้อน|เรียบง่าย|
@@ -88,6 +85,8 @@
 |มีคำสั่งเข้า memory มากกว่า lw & sw|มีคำสั่งเข้า memory 'แค่' lw & sw|
 |instruction สามารถเปลี่ยนแปลงได้|instruction ขนาดคงที่|
 |multi cycle|single cycle|
+
+<br>---------------------------------------------<br>
 
 ## [clip1 R-format](https://www.youtube.com/watch?v=wNY26EktrtM)
 <br>ในคลิปจะสรุป r-format โดยยกตัวอย่างเป็นคำสั่งการบวก มี 32 bit
