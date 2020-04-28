@@ -24,7 +24,7 @@
 
 ลักษณะการทำงานจะเป็น
 <br>![img](https://i.imgur.com/axkI8r9.jpg)
-
+ 
 **2) I-format : เกี่ยวกับหน่วยความจำ**
 
 |    opcode    |      $rs     |     $rt      |        offset          |
